@@ -1,0 +1,10 @@
+[package]
+name = "publish"
+version = "0.0.1"
+edition = "2024"
+
+[build-dependencies]
+matrix-sdk = "0.10.0"
+tokio = { version = "1.44", features = [ "full" ] }
+anyhow = "1.0.97"
+mime = "0.3.17"
