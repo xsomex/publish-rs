@@ -17,6 +17,7 @@
 				rustup
 				openssl
 				pkg-config
+				sqlite
 			];
 			RUSTC_VERSION = overrides.toolchain.channel;
 			LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
