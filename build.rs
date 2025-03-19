@@ -41,9 +41,9 @@ async fn main() -> anyhow::Result<()> {
 
     attach_dir(&r, &out).await;
 
-    let p = format!("{}/.git/HEAD", std::env::var("OUT_DIR").unwrap());
-    if std::path::Path::new(&p).exists() {
-        println!("cargo:rerun-if-changed={}", p);
+    let p = out.parent().expect("").join(".git");
+    if p.exists() {
+        println!("cargo:rerun-if-changed={}", p.display());
     }
 
     Ok(())
